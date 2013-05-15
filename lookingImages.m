@@ -14,9 +14,9 @@ y=sizeIn(2);
 changes=zeros(x,y);
 
 % Concatenation String
-stringAConcatenar='C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Susana Zapata\Susana Zapata (';  
+stringAConcatenar='C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Luz Marina Pinzon\Luz Marina Pinzon (';  
 
-for i=244:300
+for i=230:300
     inext=i+1;
     temp=strcat(stringAConcatenar,num2str(i),').BMP');
     actualImage=rgb2gray(imread(temp));

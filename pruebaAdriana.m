@@ -25,8 +25,8 @@ stringAConcatenar='C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Susana
     inext=242;
     nextImage=rgb2gray(imread(strcat(stringAConcatenar,num2str(inext),').BMP')));
           
-  for a=1:x
-      for b=1:y
+  for a=163:246
+      for b=140:238
           if abs(actualImage(a,b)-nextImage(a,b)) > 50
               
               imshow(nextImage);
