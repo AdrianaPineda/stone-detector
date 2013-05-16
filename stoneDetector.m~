@@ -1,13 +1,32 @@
 clc;
+disp('===============================');
+disp('# Initializing stone-detector #');
+disp('===============================');
+
+%{ 
+   Step 1: toGrayScale
+   Given an rgb image with variable name luzma, toGrayScale will transform
+   it to a gray value image
+%}
 original = toGrayScale(luzma);
+
+%{
+   Setp 2: clearAbdomen and cropBorders
+   - cleanAbdomen eliminates the background noise including letters and
+   other noise surrounding the abdomen
+    - cropBorders will but a 6pixel black border to eliminate the gray border
+    the image allready had
+%%
 img = cleanAbdomen(original,5);
 img = cropBorders(img, 6,6,6,6);
 
+%%
 [x1, x2, y1, y2] = findEdges(img);
 
 img = cropBorders(original, x1,x2,y1,y2);
 
 sub_img = subImage(img, x1, y1, sizeX(img)-x2, sizeY(img)-y2);
 
+tetraColorImage = tetraColor(sub_img);
 
-imshow(subimg);
+imshow(tetraColorImage);

@@ -19,11 +19,11 @@ function [ img_res ] = tetraColor( img )
     cont = true;
     while cont
         try
-            kmeans_data = kmeans(data,clusteres,'start',[0;40;110;255]);
+            kmeans_data = kmeans(data,clusteres,'start','cluster');
             cont = false;
         catch 
             cont = true;
-            disp('kmeans failed, but don`t worry, we will retry');
+            disp('kmeans failed, but don`t worrywill retry');
         end 
     end
     
