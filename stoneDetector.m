@@ -1,4 +1,4 @@
-function [] = stoneDetector(num)
+function [res] = stoneDetector(num)
 clc;
 luzma = loadImageZapata(num);
 %luzma = loadRandomImage();
@@ -35,7 +35,7 @@ imshow(img);
 %}
 [x1, x2, y1, y2] = findEdges(img);
 img = cropBorders(original, x1,x2,y1,y2);
-sub_img = subImage(img, x1, y1, sizeX(img)-x2, sizeY(img)-y2);
+sub_img = img;%subImage(img, x1, y1, sizeX(img)-x2, sizeY(img)-y2);
 disp('- Step 3: done cropping');
 
 %{
@@ -65,12 +65,8 @@ disp('- Step 4: done clustering');
 onlyOrgans = getOrgans(tetraColorImage);
 onlyBones = getBones(tetraColorImage);
 
-bones_and_organs = intersectBonesAndOrgans(onlyBones, onlyOrgans);
+res = onlyBones;
 
-res = bones_and_organs+bitand(onlyOrgans, sub_img);
-
-
-imshow(res);
 
 
 
