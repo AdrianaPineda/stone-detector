@@ -5,6 +5,7 @@ function [ img ] = getBones( img )
     
     for x=1:sizeX(img)
         for y=1:sizeY(img)
+            %TODO change value 180 for bone-trained value
             if img(y,x)>180
                 img(y,x)=255;
             else
