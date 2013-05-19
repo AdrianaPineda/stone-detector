@@ -5,16 +5,7 @@ function [ img_res ] = tetraColor( img )
     % specify the number of different clusteres
     clusteres = 4;
 
-    lenght = numel(img);
-    data = zeros(lenght,1);
-    
-    count = 1;
-    for x=1:sizeX(img)
-        for y=1:sizeY(img)
-            data(count) = img(y,x);
-            count = count + 1;
-        end
-    end
+    data = matrix2Array(img);
     
     cont = true;
     while cont

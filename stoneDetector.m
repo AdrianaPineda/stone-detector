@@ -1,4 +1,4 @@
-function [] = stoneDetector(num)
+function [res] = stoneDetector(num)
 clc;
 luzma = loadImageZapata(num);
 %luzma = loadRandomImage();
@@ -35,7 +35,7 @@ imshow(img);
 %}
 [x1, x2, y1, y2] = findEdges(img);
 img = cropBorders(original, x1,x2,y1,y2);
-sub_img = subImage(img, x1, y1, sizeX(img)-x2, sizeY(img)-y2);
+sub_img = img;%subImage(img, x1, y1, sizeX(img)-x2, sizeY(img)-y2);
 disp('- Step 3: done cropping');
 
 %{
@@ -54,7 +54,6 @@ tetraColorImage = tetraColor(sub_img);
 disp('- Step 4: done clustering');
 
 %{
-
     Step 5: Retreive the organ only region and attempt to clean/filter it
     This step will find the regions that contains only organ tissue by
     removing the bones, background and skin/muscle. After that will use erosion/dilation to
