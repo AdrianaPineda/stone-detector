@@ -23,9 +23,8 @@ disp('- Step 1: done gray scaling');
     border
 %}
 img = cleanAbdomen(original,5);
-img = cropBorders(img, 6,6,6,6);
+img = cropBorders(img, 60,60,60,60);
 disp('- Step 2: done removing outer black crap');
-imshow(img);
 
 %{
     Step 3: cropping
@@ -35,7 +34,7 @@ imshow(img);
 %}
 [x1, x2, y1, y2] = findEdges(img);
 img = cropBorders(original, x1,x2,y1,y2);
-sub_img = img;%subImage(img, x1, y1, sizeX(img)-x2, sizeY(img)-y2);
+%subImage(img, x1, y1, sizeX(img)-x2, sizeY(img)-y2);
 disp('- Step 3: done cropping');
 
 %{
@@ -50,7 +49,7 @@ disp('- Step 3: done cropping');
     - Bone: the bones (and hopefully the stone!)
 
 %}
-tetraColorImage = tetraColor(sub_img);
+%img = tetraColor(img);
 disp('- Step 4: done clustering');
 
 %{
@@ -61,8 +60,8 @@ disp('- Step 4: done clustering');
 
 %}
 
-onlyOrgans = getOrgans(tetraColorImage);
-onlyBones = getBones(tetraColorImage);
+%onlyOrgans = getOrgans(tetraColorImage);
+onlyBones = getBones(img);
 
 %bones_and_organs = intersectBonesAndOrgans(onlyBones, onlyOrgans);
 

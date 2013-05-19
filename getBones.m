@@ -5,7 +5,7 @@ function [ img ] = getBones( img )
     
     for x=1:sizeX(img)
         for y=1:sizeY(img)
-            if img(y,x)==255
+            if img(y,x)>180
                 img(y,x)=255;
             else
                 img(y,x)=0;

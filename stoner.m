@@ -1,5 +1,5 @@
 res = -1;
-for i=269:280
+for i=241:300
     
     img = stoneDetector(i);
     img = img/255;
