@@ -1,5 +1,5 @@
 function [ img ] = cropBorders( img, xInit, xFin, yInit, yFin)
-%UNTITLED9 removes the borders of an image
+%UNTITLED9 sets the borders of a gray image image with color 0
 %   Detailed explanation goes here
 
     size_y = sizeY(img);
