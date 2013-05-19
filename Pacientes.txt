@@ -1,0 +1,18 @@
+Zapata (cuadrados al derecho)
+- lookingImages=241-300
+- Eg: 244, 245, 272, 273, 275, 276, 277, 278
+- Ruta: C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Susana Zapata\Susana Zapata (241).BMP
+	C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Susana Zapata
+
+Pinzon (cuadrados al reves)
+- lookingImages=230-300
+- Eg: NO
+- Ruta: C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Luz Marina Pinzon\Luz Marina Pinzon (230).BMP
+	C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Luz Marina Pinzon\Luz Marina Pinzon (
+
+Acevedo (cuadrados al derecho)
+- lookingImages=213-270
+- Ruta: C:\Users\AdrianaPineda\Dropbox\Compartidas\Imagenes\Paciente 4 (Harley Acevedo)\Harley Acevedo (213).BMP
+	C:\Users\AdrianaPineda\Dropbox\Compartidas\Imagenes\Paciente 4 (Harley Acevedo)\Harley Acevedo (
+
+97-160

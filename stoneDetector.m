@@ -1,13 +1,13 @@
-
-rand_num =  int16(rand*(300-230))+230;
-luzma=imread(strcat('/home/mono/matlab/stone-detector/Luz Marina Pinzon/Luz Marina Pinzon (',num2str(rand_num),').BMP'));
-
+function [] = stoneDetector(num)
 clc;
+luzma = loadImageZapata(num);
+%luzma = loadRandomImage();
+
 disp('===============================');
 disp('# Initializing stone-detector #');
 disp('===============================');
 
-%{ 
+%{
    Step 1: convert from RGB to 0-255
    Given an rgb image with variable name luzma, toGrayScale will transform
    it to a gray value image
@@ -25,6 +25,7 @@ disp('- Step 1: done gray scaling');
 img = cleanAbdomen(original,5);
 img = cropBorders(img, 6,6,6,6);
 disp('- Step 2: done removing outer black crap');
+imshow(img);
 
 %{
     Step 3: cropping
@@ -42,31 +43,32 @@ disp('- Step 3: done cropping');
     Step 4: use clustering to obtain the different colors
     Having cut the unnecesary borders, we will now find the 4 different
     sections of the image:
-        - Outer black: the black color surrounding which gives us no information
-        - Abddomen body/skin/fat: the region that covers most of the image
-        - Organs: one of our regions of interes, the region that contains
-        the organs
-        - Bone: the bones (and hopefully the stone!)
+    - Outer black: the black color surrounding which gives us no information
+    - Abddomen body/skin/fat: the region that covers most of the image
+    - Organs: one of our regions of interes, the region that contains
+      the organs
+    - Bone: the bones (and hopefully the stone!)
 
 %}
 tetraColorImage = tetraColor(sub_img);
 disp('- Step 4: done clustering');
 
-imshow(tetraColorImage);
-onlyOrgans = normalizeColors(tetraColorImage);
+%{
 
-imshow(bitand(onlyOrgans,sub_img));
+    Step 5: Retreive the organ only region and attempt to clean/filter it
+    This step will find the regions that contains only organ tissue by
+    removing the bones, background and skin/muscle. After that will use erosion/dilation to
+    clean the image by removing unnecesary regions/noise.
+
+%}
+
+onlyOrgans = getOrgans(tetraColorImage);
+onlyBones = getBones(tetraColorImage);
+
+%bones_and_organs = intersectBonesAndOrgans(onlyBones, onlyOrgans);
+
+res = onlyBones;
 
 
-
-
-
-
-
-
-
-
-
-
-
+imshow(res);
 

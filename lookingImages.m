@@ -2,7 +2,7 @@ function [ changes ] = lookingImages(  )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
-firstImage=rgb2gray(imread('C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Susana Zapata\Susana Zapata (241).BMP'));
+firstImage=rgb2gray(imread('C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Luz Marina Pinzon\Luz Marina Pinzon (230).BMP'));
 sizeIn=size(firstImage);
 
 %Obtaining the number of vertical and horizontal pixels of the input
@@ -20,10 +20,14 @@ for i=230:300
     inext=i+1;
     temp=strcat(stringAConcatenar,num2str(i),').BMP');
     actualImage=rgb2gray(imread(temp));
-    
+  %  if(i==213)
+  %      actualImageBones=getBones(actualImage);
+  %  end
     if i<300
         temp2=strcat(stringAConcatenar,num2str(inext),').BMP');
-        nextImage=rgb2gray(imread(temp2));  
+        nextImage=rgb2gray(imread(temp2));
+        
+   %     nextImageBones=getBones(nextImage);        
         result=test(nextImage, actualImage);
         
         for k=1:x
@@ -34,6 +38,8 @@ for i=230:300
             end
     
         end
+        
+   %     actualImageBones=nextImageBones;
     end    
 end
 
