@@ -53,6 +53,7 @@ disp('- Step 3: done cropping');
 disp('- Step 4: done clustering');
 
 %{
+
     Step 5: Retreive the organ only region and attempt to clean/filter it
     This step will find the regions that contains only organ tissue by
     removing the bones, background and skin/muscle. After that will use erosion/dilation to
@@ -63,10 +64,4 @@ disp('- Step 4: done clustering');
 %onlyOrgans = getOrgans(tetraColorImage);
 onlyBones = getBones(img);
 
-%bones_and_organs = intersectBonesAndOrgans(onlyBones, onlyOrgans);
-
 res = onlyBones;
-
-
-imshow(res);
-
