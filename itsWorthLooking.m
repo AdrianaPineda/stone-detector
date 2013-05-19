@@ -2,19 +2,6 @@ function [  ] = itsWorthLooking( inputImage )
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
 
-outputImage=edge(inputImage);
-
-BW2 = bwareaopen(outputImage, 20)
-result=outputImage-BW2;
-imshow(result);
-
-%First Option
-holesFilling=imdilate(inputImage, strel('square',4));
-holesFilling2=imerode(holesFilling, strel('square',6));
-holesFilling3=imdilate(holesFilling2, strel('square',6));
-imshow(holesFilling3);
-imshow(inputImage-holesFilling3);
-
 %Second option
 sizeIn=size(inputImage);
 
@@ -24,6 +11,7 @@ xS=sizeIn(1);
 yS=sizeIn(2);
 
 original=zeros(xS, yS);
+resultFernando=testFernando;
 
 for i=20:500
     for j=20:500
@@ -33,7 +21,6 @@ for i=20:500
         downPixels=j+8;
         countWhite=0;
         if(inputImage(j,i)==1)
-        
         for k=leftPixels:rightPixels
             for l=upPixels:downPixels
               if(inputImage(l,k)==1)
@@ -41,7 +28,7 @@ for i=20:500
               end
             end
         end
-        if countWhite>=15
+        if countWhite>=15 && resultFernando(j,i)<=5
             original(j,i)=1;
         end
         end

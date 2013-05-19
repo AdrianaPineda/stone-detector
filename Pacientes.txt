@@ -2,7 +2,7 @@ Zapata (cuadrados al derecho)
 - lookingImages=241-300
 - Eg: 244, 245, 272, 273, 275, 276, 277, 278
 - Ruta: C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Susana Zapata\Susana Zapata (241).BMP
-	C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Susana Zapata
+	C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Susana Zapata\Susana Zapata (
 
 Pinzon (cuadrados al reves)
 - lookingImages=230-300
@@ -15,4 +15,17 @@ Acevedo (cuadrados al derecho)
 - Ruta: C:\Users\AdrianaPineda\Dropbox\Compartidas\Imagenes\Paciente 4 (Harley Acevedo)\Harley Acevedo (213).BMP
 	C:\Users\AdrianaPineda\Dropbox\Compartidas\Imagenes\Paciente 4 (Harley Acevedo)\Harley Acevedo (
 
-97-160
+Romero (cuadrados al derecho)
+- lookingImages=97-160
+- Eg: 112, 113, 136
+- Ruta: C:\Users\AdrianaPineda\Dropbox\Compartidas\Imagenes\Paciente 1 (john Romero)\John Romero (97).BMP
+	C:\Users\AdrianaPineda\Dropbox\Compartidas\Imagenes\Paciente 1 (john Romero)
+
+Cuadrados
+Al derecho
+X= 130:400
+Y= 120:257
+
+Al reves
+X= 130:400
+Y= 254:357
