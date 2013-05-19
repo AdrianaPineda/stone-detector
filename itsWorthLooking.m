@@ -3,12 +3,10 @@ function [  ] = itsWorthLooking( inputImage )
 %   Detailed explanation goes here
 
 %Second option
-sizeIn=size(inputImage);
-
 %Obtaining the number of vertical and horizontal pixels of the input
 %image
-xS=sizeIn(1);
-yS=sizeIn(2);
+xS=sizeX(inputImage);
+yS=sizeY(inputImage);
 
 original=zeros(xS, yS);
 resultFernando=testFernando;
