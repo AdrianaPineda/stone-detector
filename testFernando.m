@@ -1,10 +1,7 @@
-function [ res ] = testFernando(  )
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+function [ res ] = testFernando( indexS, indexF )
 
 res = -1;
-for i=230:300
-    
+for i=indexS:indexF
     img = stoneDetector(i);
     img = img/255;
     if res == -1
@@ -12,15 +9,11 @@ for i=230:300
     else
         res = res + img;
     end
-    
 end
 
 res = res - 1;
 
-
-imshow(res*20);
-
-
+%imshow(res*20);
 
 end
 

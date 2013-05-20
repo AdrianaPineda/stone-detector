@@ -12,6 +12,7 @@ Pinzon (cuadrados al reves)
 
 Acevedo (cuadrados al derecho)
 - lookingImages=213-270
+- Eg: 226, 227
 - Ruta: C:\Users\AdrianaPineda\Dropbox\Compartidas\Imagenes\Paciente 4 (Harley Acevedo)\Harley Acevedo (213).BMP
 	C:\Users\AdrianaPineda\Dropbox\Compartidas\Imagenes\Paciente 4 (Harley Acevedo)\Harley Acevedo (
 

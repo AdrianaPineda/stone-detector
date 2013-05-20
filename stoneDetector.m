@@ -1,5 +1,6 @@
 function [res] = stoneDetector(num)
 clc;
+
 luzma = loadImageZapata(num);
 %luzma = loadRandomImage();
 
