@@ -1,15 +1,11 @@
-function [  ] = itsWorthLooking( inputImage )
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+function [ result ] = itsWorthLooking( inputImage, x, y, index_iS, index_iF )
 
-%Second option
-%Obtaining the number of vertical and horizontal pixels of the input
-%image
-xS=sizeX(inputImage);
-yS=sizeY(inputImage);
+%Checks if a white pixel can be considered a stone
 
-original=zeros(xS, yS);
-resultFernando=testFernando;
+%Creates a matrix that will contain white pixels NOT corresponding to a
+%stone
+original=zeros(x, y);
+resultFernando=testFernando(index_iS, index_iF);
 
 for i=20:500
     for j=20:500
@@ -26,14 +22,15 @@ for i=20:500
               end
             end
         end
-        if (countWhite>=10 || (resultFernando(j,i)>3 || resultFernando(j,i)==0))
+
+        if (countWhite>=10 || resultFernando(j,i)>5 || resultFernando(j,i)==0)
             original(j,i)=1;
         end
         end
     end
 end
 
-imshow(inputImage-original);
+result=(inputImage-original);
 
 end
 

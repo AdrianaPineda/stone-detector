@@ -1,6 +1,9 @@
+function [res] = stoner(index_start, index_final)
+
 clc;
+
 res = -1;
-for i=241:300
+for i=index_start:index_final
     
     img = boneIntensityMap(i);
     
@@ -13,5 +16,3 @@ for i=241:300
 end
 
 res = max(res - 1,0);
-
-imshow(res*20);
