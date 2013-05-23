@@ -2,24 +2,25 @@ function [ changes ] = lookingImages(  )
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
-firstImage=rgb2gray(imread('C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Luz Marina Pinzon\Luz Marina Pinzon (230).BMP'));
+firstImage=rgb2gray(imread('/home/mono/matlab/stone-detector/Susana Zapata/Susana Zapata (241).BMP'));
 sizeIn=size(firstImage);
-
 %Obtaining the number of vertical and horizontal pixels of the input
 %image
 x=sizeIn(1);
 y=sizeIn(2);
 
+
+
 %New matrix
 changes=zeros(x,y);
 
 % Concatenation String
-stringAConcatenar='C:\Users\AdrianaPineda\Documents\GitHub\stone-detector\Luz Marina Pinzon\Luz Marina Pinzon (';  
+stringAConcatenar='/home/mono/matlab/stone-detector/Susana Zapata/Susana Zapata (';  
 
-for i=230:300
+for i=241:300
     inext=i+1;
     temp=strcat(stringAConcatenar,num2str(i),').BMP');
-    actualImage=rgb2gray(imread(temp));
+    actualImage=rgb2gray(loadImageZapata(i));
   %  if(i==213)
   %      actualImageBones=getBones(actualImage);
   %  end

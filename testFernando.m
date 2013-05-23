@@ -3,7 +3,7 @@ function [ res ] = testFernando(  )
 %   Detailed explanation goes here
 
 res = -1;
-for i=230:300
+for i=241:300
     
     img = stoneDetector(i);
     img = img/255;

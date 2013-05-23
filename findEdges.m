@@ -4,7 +4,7 @@ function [ x1, x2, y1, y2 ] = findEdges( img )
 %   The located points correspond to the center top, center bottom, center
 %   left and center right pixels
 
-    value = 5;
+    value = 20;
 
     x1 = 0;
     x2 = 0;

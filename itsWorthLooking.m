@@ -26,7 +26,7 @@ for i=20:500
               end
             end
         end
-        if countWhite>=15 && resultFernando(j,i)<=5
+        if (countWhite>=10 || (resultFernando(j,i)>3 || resultFernando(j,i)==0))
             original(j,i)=1;
         end
         end
