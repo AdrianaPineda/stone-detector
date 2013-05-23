@@ -11,7 +11,6 @@ function [ x1, x2, y1, y2 ] = findEdges( img )
     y1 = 0;
     y2 = 0;
     
-    
     size_x = sizeX(img);
     size_y = sizeY(img);
     
