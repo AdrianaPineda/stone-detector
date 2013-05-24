@@ -1,4 +1,4 @@
-function [ output_image ] = which_pacient_for( num_pacient, index )
+function [ output_image ] = getImageFromPacient( num_pacient, index )
 
 %Loads the ith image according to the pacient being analyzed
     if num_pacient==1

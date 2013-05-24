@@ -18,8 +18,8 @@ original = rgb2gray(luzma);
     - cropBorders will but a 6pixel black border to eliminate the existing
     border
 %}
-img = cleanAbdomen(original,5);
-img = cropBorders(img, 6,6,6,6);
+img = cropBorders(original, 6,6,6,6);
+img = cleanAbdomen(img,5);
 
 %{
     Step 3: Finds the edges of the images and use this information to
