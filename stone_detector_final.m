@@ -1,4 +1,4 @@
-function [ output_image ] = stone_detector_final( num_pacient )
+function [ output_image ] = stone_detector_final( num_pacient, boneMap, thickness )
 %Algorithm which returns an image with posible kidney stones
 
 %-------------------------------------------------------------------------
@@ -9,7 +9,8 @@ disp('- Step 1: loading images');
 %has different number of images and the first image has not the same number
 [index_iS, index_iF, firstImageLoaded, up]=which_pacient(num_pacient);
 
-boneMap = stoner(index_iS, index_iF, num_pacient);
+%TODO
+%boneMap = stoner(index_iS, index_iF, num_pacient);
 
 %sets the number of vertical and horizontal pixels of the input
 size_x = sizeX(firstImageLoaded);
@@ -37,16 +38,18 @@ for i=index_iS:index_iF-1
     nextImage=getImageFromPacient(num_pacient, i+1);
     %Checks intensity values. Calls function 'showIntensityChanges'
     % 
-    result=showIntensityChanges(currentImage, nextImage, size_x, size_y, up);
+    result=showIntensityChanges(currentImage, nextImage, boneMap, thickness, size_x, size_y, up);
     % add result to current changes
     changes = changes + result;
 end
 
+%
+%output_image=changes;
 %-------------------------------------------------------------------------
 % Detecting stones
 %-------------------------------------------------------------------------
 %disp('- Step 3: detecting stones');
-%output_image=itsWorthLooking(changes, size_x, size_y, index_iS, index_iF);
+output_image=itsWorthLooking(changes, size_x, size_y);
 %imshow(output_image);
 
 end

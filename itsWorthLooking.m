@@ -1,11 +1,10 @@
-function [ result ] = itsWorthLooking( inputImage, x, y, index_iS, index_iF )
-
+function [ result ] = itsWorthLooking( inputImage, size_x, size_y)
 %Checks if a white pixel can be considered a stone
 
 %Creates a matrix that will contain white pixels NOT corresponding to a
 %stone
-original=zeros(x, y);
-resultFernando=testFernando(index_iS, index_iF);
+original=zeros(size_x, size_y);
+%resultFernando=testFernando(index_iS, index_iF);
 
 for i=20:500
     for j=20:500
@@ -23,13 +22,21 @@ for i=20:500
             end
         end
 
-        if (countWhite>=10 || resultFernando(j,i)>5 || resultFernando(j,i)==0)
+%        if (countWhite>=10 || resultFernando(j,i)>5 || resultFernando(j,i)==0)
+        if (countWhite>=15)
             original(j,i)=1;
         end
         end
     end
 end
 
+for i=1:size_x
+    for j=1:size_y
+        if(inputImage(j,i)>0)
+            inputImage(j,i)=1;
+        end
+    end
+end
 result=(inputImage-original);
 
 end
