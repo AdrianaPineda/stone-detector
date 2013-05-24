@@ -1,12 +1,13 @@
-function [res] = boneIntensityMap(original)
+function [res] = boneIntensityMap(luzma)
+
+disp(strcat('# generating bone intensity map for: ',num2str(num),' #'));
 
 %{
    Step 1: convert from RGB to 0-255
    Given an rgb image with variable name luzma, toGrayScale will transform
    it to a gray value image
 %}
-% Note: this step is done somewhere else
-% step deprecated :)
+original = rgb2gray(luzma);
 
 %{
     Setp 2: remove outer black crap

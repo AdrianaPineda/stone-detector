@@ -9,6 +9,8 @@ disp('- Step 1: loading images');
 %has different number of images and the first image has not the same number
 [index_iS, index_iF, firstImageLoaded, up]=which_pacient(num_pacient);
 
+boneMap = stoner(index_iS, index_iF, num_pacient);
+
 %sets the number of vertical and horizontal pixels of the input
 size_x = sizeX(firstImageLoaded);
 size_y = sizeY(firstImageLoaded);
@@ -25,7 +27,7 @@ disp('- Step 2: comparing intensities');
 for i=index_iS:index_iF-1
     
     if i==index_iS
-        currentImage=toGrayScale(firstImageLoaded);
+        currentImage=firstImageLoaded;
     else
         currentImage=getImageFromPacient(num_pacient, i);
     end
@@ -39,9 +41,6 @@ for i=index_iS:index_iF-1
     % add result to current changes
     changes = changes + result;
 end
-
-%Shows the image with pixels with value equal to 1 when the
-imshow(changes/(255*(max(max(changes)))));
 
 %-------------------------------------------------------------------------
 % Detecting stones

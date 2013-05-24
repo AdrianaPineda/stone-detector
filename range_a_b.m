@@ -10,15 +10,15 @@ down=size_of_y-y2;
 l1=right-left;
 l2=down-upV;
 
-xStart=uint8(0.15*l1)+left;
-xEnd=uint8(0.85*l1)+left;
+xStart=int16(0.15*l1)+left;
+xEnd=int16(0.85*l1)+left;
 
 if up
-    yStart=uint8(0.1*l2)+upV;
-    yEnd=uint8(0.45*l2)+upV;
+    yStart=int16(0.1*l2)+upV;
+    yEnd=int16(0.7*l2)+upV;
 else
-    yStart=uint8(0.4*l2)+upV;
-    yEnd=uint8(0.8*l2)+upV;
+    yStart=int16(0.4*l2)+upV;
+    yEnd=int16(0.8*l2)+upV;
 end
 
 

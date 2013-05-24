@@ -11,22 +11,22 @@ if num_pacient==1
     index_iS=213;
     index_iF=270;
     up=true;
-    firstImageLoaded=loadImageAcevedo(index_iS);
+    firstImageLoaded=rgb2gray(loadImageAcevedo(index_iS));
 elseif num_pacient==2
     index_iS=230;
     index_iF=300;
     up=false;
-    firstImageLoaded=loadImagePinzon(index_iS);
+    firstImageLoaded=rgb2gray(loadImagePinzon(index_iS));
 elseif num_pacient==3
     index_iS=97;
     index_iF=160;
     up=true;
-    firstImageLoaded=loadImageRomero(index_iS);
+    firstImageLoaded=rgb2gray(loadImageRomero(index_iS));
 else
     index_iS=241;
     index_iF=300;
     up=true;
-    firstImageLoaded=loadImageZapata(index_iS);
+    firstImageLoaded=rgb2gray(loadImageZapata(index_iS));
 end
 
 end

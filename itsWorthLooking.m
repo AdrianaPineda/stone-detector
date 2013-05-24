@@ -14,10 +14,10 @@ for i=20:500
         upPixels=j-8;
         downPixels=j+8;
         countWhite=0;
-        if(inputImage(j,i)==1)
+        if(inputImage(j,i)>=1)
         for k=leftPixels:rightPixels
             for l=upPixels:downPixels
-              if(inputImage(l,k)==1)
+              if(inputImage(l,k)>=1)
                   countWhite=countWhite+1;
               end
             end
