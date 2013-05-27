@@ -1,2 +1,0 @@
-1. Stoner: devuelve una imagen con los huesos
-2. 
