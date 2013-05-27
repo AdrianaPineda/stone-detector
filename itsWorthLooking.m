@@ -4,7 +4,6 @@ function [ result ] = itsWorthLooking( inputImage, size_x, size_y)
 %Creates a matrix that will contain white pixels NOT corresponding to a
 %stone
 original=zeros(size_x, size_y);
-%resultFernando=testFernando(index_iS, index_iF);
 
 for i=20:500
     for j=20:500
@@ -21,8 +20,6 @@ for i=20:500
               end
             end
         end
-
-%        if (countWhite>=10 || resultFernando(j,i)>5 || resultFernando(j,i)==0)
         if (countWhite>=15)
             original(j,i)=1;
         end

@@ -9,7 +9,7 @@ disp('- Step 1: loading images');
 %has different number of images and the first image has not the same number
 [index_iS, index_iF, firstImageLoaded, up]=which_pacient(num_pacient, directory);
 
-boneMap = stoner(index_iS, index_iF, num_pacient, directory);
+boneMap = stoner(index_iS, index_iF, num_pacient);
 
 %sets the number of vertical and horizontal pixels of the input
 size_x = sizeX(firstImageLoaded);
@@ -37,12 +37,12 @@ for i=index_iS:index_iF-1
     if i==index_iS
         currentImage=firstImageLoaded;
     else
-        currentImage=getImageFromPacient(num_pacient, i, directory);
+        currentImage=getImageFromPacient(num_pacient, i);
     end
     
     %Loads images
     
-    nextImage=getImageFromPacient(num_pacient, i+1, directory);
+    nextImage=getImageFromPacient(num_pacient, i+1);
     %Checks intensity values. Calls function 'showIntensityChanges'
     % 
     result=showIntensityChanges(currentImage, nextImage, boneMap, thickness, xStart, xEnd, yStart, yEnd, size_x, size_y);
@@ -60,6 +60,6 @@ output_image=itsWorthLooking(changes, size_x, size_y);
 % Showing stones
 %-------------------------------------------------------------------------
 disp('- Step 4: showing stones');
-draw_square(changes, num_pacient, size_x, size_y, directory);
+draw_square(changes, numPacient, size_x, size_y);
 end
 

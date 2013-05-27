@@ -1,5 +1,5 @@
 function [ pixel_x, pixel_y, image] = first_stone( image, size_x, size_y, fromV, toV )
-%UNTITLED6 Summary of this function goes here
+%Finds the first stone
 %   Detailed explanation goes here
 pixel_x=-1;
 pixel_y=-1;
@@ -16,7 +16,6 @@ for i=fromV:size_x
             pixel_x=i;
             pixel_y=j;
             
-            
             for a=i-8:i+8
                 for b=j-8:j+8
                     image(b,a)=2;
@@ -31,8 +30,5 @@ for i=fromV:size_x
         break;
     end
 end
-
-imshow(image);
-
 end
 
