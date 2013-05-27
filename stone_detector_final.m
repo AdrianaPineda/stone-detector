@@ -1,4 +1,4 @@
-function [ output_image ] = stone_detector_final( num_pacient, thickness, directory)
+function [ ] = stone_detector_final( num_pacient, thickness, directory)
 %Algorithm which returns an image with posible kidney stones
 
 %-------------------------------------------------------------------------
